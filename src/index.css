@@ -43,3 +43,36 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-accent-muted;
 }
+
+/* 🌸 Flower Background Styling */
+.flower-bg {
+  width: 600px;
+  max-width: 90vw;
+  opacity: 0.12;
+  filter: blur(1px) drop-shadow(0 0 60px rgba(167, 139, 250, 0.35));
+  animation: floatFlower 12s ease-in-out infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Floating animation */
+@keyframes floatFlower {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) rotate(6deg) scale(1.03);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .flower-bg {
+    width: 360px;
+    opacity: 0.08;
+    filter: blur(1px) drop-shadow(0 0 40px rgba(167, 139, 250, 0.25));
+  }
+}
