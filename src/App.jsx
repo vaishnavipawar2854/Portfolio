@@ -18,7 +18,7 @@ export default function App() {
       <div
         className="fixed inset-0 z-0 bg-center bg-no-repeat bg-contain opacity-40 pointer-events-none"
         style={{
-          backgroundImage: "url('/images/flower.png')"
+          backgroundImage: "url('/images/image.png')"
         }}
       />
 
