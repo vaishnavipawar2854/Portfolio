@@ -13,28 +13,35 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-12 md:py-16 px-4 md:px-8 lg:px-16 scroll-mt-20">
-      <div className="max-w-5xl mx-auto">
+    <section id="skills" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 scroll-mt-20">
+      <div className="max-w-6xl mx-auto">
         <SectionHeading title="Skills" subtitle="Technologies and tools I work with" />
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          initial={{ opacity: 0, y: 16 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.4, staggerChildren: 0.05 }}
+          transition={{ duration: 0.5, staggerChildren: 0.1 }}
         >
           {categories.map((cat, idx) => (
             <motion.div
               key={cat.key}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05, duration: 0.35 }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              whileHover={{ scale: 1.03, y: -5 }}
             >
-              <GlassCard className="p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-accent-primary text-lg">{cat.icon}</span>
-                  <h3 className="text-accent-primary font-semibold text-sm">{cat.label}</h3>
+              <GlassCard className="p-6 h-full">
+                <div className="flex items-center gap-2.5 mb-4">
+                  <motion.span
+                    className="text-accent-primary text-2xl"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                  >
+                    {cat.icon}
+                  </motion.span>
+                  <h3 className="text-accent-primary font-semibold text-base">{cat.label}</h3>
                 </div>
                 {cat.key === 'soft' ? (
                   <div className="flex flex-wrap gap-1.5">

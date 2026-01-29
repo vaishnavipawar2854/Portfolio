@@ -5,25 +5,26 @@ import { projects } from '../../data/portfolioData'
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-12 md:py-16 px-4 md:px-8 lg:px-16 scroll-mt-20">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-16 md:py-24 px-6 md:px-12 lg:px-20 scroll-mt-20">
+      <div className="max-w-7xl mx-auto">
         <SectionHeading title="Projects" subtitle="Things I've built" />
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.4, staggerChildren: 0.06 }}
+          transition={{ duration: 0.5, staggerChildren: 0.1 }}
         >
           {projects.map((p, i) => (
             <motion.div
               key={p.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
+              transition={{ delay: i * 0.1, duration: 0.5, ease: 'easeOut' }}
+              whileHover={{ scale: 1.03, y: -8 }}
             >
-              <GlassCard className="h-full flex flex-col p-0 overflow-hidden">
+              <GlassCard className="h-full flex flex-col p-0 overflow-hidden hover:shadow-glow-sm">
                 {p.image && (
                   <div className="block relative overflow-hidden rounded-t-2xl">
                     {p.links?.live ? (
@@ -31,9 +32,9 @@ export default function Projects() {
                         <motion.img
                           src={p.image}
                           alt={p.title}
-                          className="w-full h-40 object-cover object-top"
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.3 }}
+                          className="w-full h-48 object-cover object-top"
+                          whileHover={{ scale: 1.08 }}
+                          transition={{ duration: 0.4 }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-3">
                           <span className="text-accent-primary text-sm font-medium">View live →</span>
@@ -43,9 +44,9 @@ export default function Projects() {
                       <motion.img
                         src={p.image}
                         alt={p.title}
-                        className="w-full h-40 object-cover object-top"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
+                        className="w-full h-48 object-cover object-top"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
                       />
                     )}
                   </div>

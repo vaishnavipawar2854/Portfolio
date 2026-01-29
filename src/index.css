@@ -7,10 +7,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
   body {
     @apply bg-dark-900 text-gray-100 font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
@@ -20,6 +22,10 @@
   }
   .glass-card {
     @apply bg-surface-glass backdrop-blur-xl border border-surface-glassBorder;
+    transition: all 0.3s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(167, 139, 250, 0.3);
   }
 }
 
