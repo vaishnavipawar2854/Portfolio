@@ -134,6 +134,19 @@ export default function Hero() {
           >
             Get in Touch
           </motion.a>
+          <motion.a
+            href="/Vaishnavi_Pawar_Resume.pdf"
+            download
+            className="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold text-lg shadow-lg"
+            whileHover={{
+              scale: 1.1,
+              boxShadow: '0 0 30px rgba(139,92,246,0.7)',
+              y: -3,
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            📄 Download CV
+          </motion.a>
         </motion.div>
         <motion.div
           className="flex gap-4 justify-center md:justify-start"
